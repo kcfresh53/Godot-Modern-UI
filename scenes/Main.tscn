@@ -1,0 +1,515 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://scenes/MenuBtn.tscn" type="PackedScene" id=1]
+[ext_resource path="res://images/svg_images/icon_app_top.svg" type="Texture" id=2]
+[ext_resource path="res://images/svg_images/minimize_icon.svg" type="Texture" id=3]
+[ext_resource path="res://images/svg_images/maximize_icon.svg" type="Texture" id=4]
+[ext_resource path="res://images/svg_images/close_icon.svg" type="Texture" id=5]
+[ext_resource path="res://scripts/topTab.gd" type="Script" id=6]
+[ext_resource path="res://scenes/Tab.tscn" type="PackedScene" id=7]
+[ext_resource path="res://styles/MenuBtnNormal.tres" type="StyleBox" id=8]
+[ext_resource path="res://styles/MenuBtnHover.tres" type="StyleBox" id=9]
+[ext_resource path="res://images/svg_images/menu_icon.svg" type="Texture" id=10]
+[ext_resource path="res://scripts/Main.gd" type="Script" id=11]
+[ext_resource path="res://images/svg_images/save_icon.svg" type="Texture" id=12]
+[ext_resource path="res://images/svg_images/home_icon.svg" type="Texture" id=13]
+[ext_resource path="res://images/svg_images/open_icon.svg" type="Texture" id=14]
+[ext_resource path="res://images/svg_images/settings_icon.svg" type="Texture" id=15]
+[ext_resource path="res://scenes/tabContent.tscn" type="PackedScene" id=16]
+[ext_resource path="res://images/svg_images/on.svg" type="Texture" id=17]
+[ext_resource path="res://images/svg_images/off.svg" type="Texture" id=18]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.211765, 0.227451, 0.27451, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.141176, 0.145098, 0.180392, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.321569, 0.345098, 0.415686, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.145098, 0.152941, 0.192157, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.262745, 0.435294, 0.666667, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.279358, 0.299362, 0.359375, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Theme" id=9]
+CheckButton/icons/off = ExtResource( 18 )
+CheckButton/icons/on = ExtResource( 17 )
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.145098, 0.152941, 0.192157, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="DynamicFontData" id=15]
+font_path = "res://font/droid-sans.regular.ttf"
+
+[sub_resource type="DynamicFont" id=16]
+size = 20
+font_data = SubResource( 15 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BG" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.172549, 0.192157, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="body" type="VBoxContainer" parent="BG"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="topTab" type="HBoxContainer" parent="BG/body"]
+margin_right = 1024.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+size_flags_horizontal = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="tabBtn" type="Button" parent="BG/body/topTab"]
+margin_right = 80.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 80, 80 )
+custom_styles/hover = ExtResource( 9 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/normal = ExtResource( 8 )
+toggle_mode = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Icon" type="TextureRect" parent="BG/body/topTab/tabBtn"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -10.0
+margin_top = -10.0
+margin_right = 10.0
+margin_bottom = 10.0
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="topTab" type="VBoxContainer" parent="BG/body/topTab"]
+margin_left = 80.0
+margin_right = 1024.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 924, 0 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="topTabControl" type="ColorRect" parent="BG/body/topTab/topTab"]
+margin_right = 944.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+color = Color( 0.109804, 0.113725, 0.12549, 1 )
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="HBoxContainer" parent="BG/body/topTab/topTab/topTabControl"]
+anchor_right = 0.185
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_right = 0.360001
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/body/topTab/topTab/topTabControl/title"]
+margin_right = 20.0
+margin_bottom = 50.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="BG/body/topTab/topTab/topTabControl/title/VBoxContainer"]
+margin_top = 15.0
+margin_right = 20.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 20, 20 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="BG/body/topTab/topTab/topTabControl/title"]
+margin_left = 24.0
+margin_top = 18.0
+margin_right = 104.0
+margin_bottom = 32.0
+text = "Task Planner"
+
+[node name="controlBar" type="HBoxContainer" parent="BG/body/topTab/topTab/topTabControl"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -25.0
+margin_bottom = 25.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="minimizeBtn" parent="BG/body/topTab/topTab/topTabControl/controlBar" instance=ExtResource( 1 )]
+Icon = ExtResource( 3 )
+
+[node name="maximizeBtn" parent="BG/body/topTab/topTab/topTabControl/controlBar" instance=ExtResource( 1 )]
+margin_left = 50.0
+margin_right = 100.0
+custom_styles/pressed = ExtResource( 8 )
+Icon = ExtResource( 4 )
+
+[node name="closeBtn" parent="BG/body/topTab/topTab/topTabControl/controlBar" instance=ExtResource( 1 )]
+margin_left = 100.0
+margin_right = 150.0
+Icon = ExtResource( 5 )
+
+[node name="descriptionTab" type="ColorRect" parent="BG/body/topTab/topTab"]
+margin_top = 50.0
+margin_right = 944.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 30 )
+color = Color( 0.145098, 0.152941, 0.192157, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/body/topTab/topTab/descriptionTab"]
+anchor_right = 0.892
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -0.208008
+rect_min_size = Vector2( 0, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="appDescription" type="Label" parent="BG/body/topTab/topTab/descriptionTab/HBoxContainer"]
+modulate = Color( 0.321569, 0.345098, 0.415686, 1 )
+margin_top = 8.0
+margin_right = 183.0
+margin_bottom = 22.0
+text = "Application Description here"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="BG/body/topTab/topTab/descriptionTab"]
+anchor_left = 0.917
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.308044
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tabName" type="Label" parent="BG/body/topTab/topTab/descriptionTab/HBoxContainer2"]
+modulate = Color( 0.321569, 0.345098, 0.415686, 1 )
+margin_left = 13.0
+margin_top = 8.0
+margin_right = 64.0
+margin_bottom = 22.0
+text = "| HOME"
+align = 2
+
+[node name="activeArea" type="HBoxContainer" parent="BG/body"]
+margin_top = 80.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="leftTab" type="ColorRect" parent="BG/body/activeArea"]
+margin_right = 80.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 80, 0 )
+size_flags_vertical = 3
+color = Color( 0.109804, 0.113725, 0.12549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="tabHolder" type="VBoxContainer" parent="BG/body/activeArea/leftTab"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="homeTab" parent="BG/body/activeArea/leftTab/tabHolder" instance=ExtResource( 7 )]
+Icon = ExtResource( 13 )
+tab_name = "Home"
+active = true
+
+[node name="openTab" parent="BG/body/activeArea/leftTab/tabHolder" instance=ExtResource( 7 )]
+margin_top = 80.0
+margin_bottom = 160.0
+Icon = ExtResource( 14 )
+tab_name = "Open"
+
+[node name="saveTab" parent="BG/body/activeArea/leftTab/tabHolder" instance=ExtResource( 7 )]
+margin_top = 160.0
+margin_bottom = 240.0
+Icon = ExtResource( 12 )
+tab_name = "Save"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/body/activeArea/leftTab/tabHolder"]
+margin_top = 240.0
+margin_right = 80.0
+margin_bottom = 240.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settingsTab" parent="BG/body/activeArea/leftTab" instance=ExtResource( 7 )]
+anchor_top = 0.961
+anchor_right = 1.0
+anchor_bottom = 0.961
+margin_top = -79.72
+margin_right = 0.0
+margin_bottom = 0.279999
+Icon = ExtResource( 15 )
+tab_name = "Settings"
+
+[node name="contentArea" type="VBoxContainer" parent="BG/body/activeArea"]
+margin_left = 80.0
+margin_right = 1024.0
+margin_bottom = 520.0
+size_flags_horizontal = 3
+custom_constants/separation = 0
+
+[node name="contentHolder" type="ColorRect" parent="BG/body/activeArea/contentArea"]
+margin_right = 944.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0.172549, 0.192157, 0.239216, 0 )
+
+[node name="content1" parent="BG/body/activeArea/contentArea/contentHolder" instance=ExtResource( 16 )]
+custom_constants/separation = 10
+tab_name = "Home"
+
+[node name="inputsPanel" type="Panel" parent="BG/body/activeArea/contentArea/contentHolder/content1"]
+margin_right = 644.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="inputPanel" type="HBoxContainer" parent="BG/body/activeArea/contentArea/contentHolder/content1/inputsPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 10.0
+margin_right = -20.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lineEdit" type="LineEdit" parent="BG/body/activeArea/contentArea/contentHolder/content1/inputsPanel/inputPanel"]
+margin_right = 416.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_colors/cursor_color = Color( 0.262745, 0.435294, 0.666667, 1 )
+custom_styles/focus = SubResource( 12 )
+custom_styles/normal = SubResource( 2 )
+placeholder_text = " Insert Name Here"
+placeholder_alpha = 0.2
+caret_blink = true
+
+[node name="Button" type="Button" parent="BG/body/activeArea/contentArea/contentHolder/content1/inputsPanel/inputPanel"]
+margin_left = 420.0
+margin_right = 520.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 0 )
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+text = "ENTER"
+
+[node name="checkboxHolder" type="Panel" parent="BG/body/activeArea/contentArea/contentHolder/content1/inputsPanel/inputPanel"]
+margin_left = 524.0
+margin_right = 604.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 80, 0 )
+custom_styles/panel = SubResource( 10 )
+
+[node name="CheckButton" type="CheckButton" parent="BG/body/activeArea/contentArea/contentHolder/content1/inputsPanel/inputPanel/checkboxHolder"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -28.0
+margin_top = -20.0
+margin_right = 28.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 40, 0 )
+theme = SubResource( 9 )
+custom_styles/focus = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="BG/body/activeArea/contentArea/contentHolder/content1"]
+margin_top = 70.0
+margin_right = 644.0
+margin_bottom = 340.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 13 )
+
+[node name="name" type="Label" parent="BG/body/activeArea/contentArea/contentHolder/content1/Panel"]
+anchor_right = 1.0
+anchor_bottom = 0.15
+margin_bottom = 1.72
+custom_fonts/font = SubResource( 16 )
+text = "Welcome, "
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bodyText" type="Label" parent="BG/body/activeArea/contentArea/contentHolder/content1/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 50.0
+margin_right = -20.0
+margin_bottom = -20.0
+text = "This is a demo application that can help with productivity and note taking. This is still a work in progress and more time is still needed to finish this off."
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="content2" parent="BG/body/activeArea/contentArea/contentHolder" instance=ExtResource( 16 )]
+visible = false
+tab_name = "Open"
+
+[node name="Panel" type="Panel" parent="BG/body/activeArea/contentArea/contentHolder/content2"]
+margin_right = 644.0
+margin_bottom = 340.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="content3" parent="BG/body/activeArea/contentArea/contentHolder" instance=ExtResource( 16 )]
+visible = false
+tab_name = "Save"
+
+[node name="Panel" type="Panel" parent="BG/body/activeArea/contentArea/contentHolder/content3"]
+margin_right = 644.0
+margin_bottom = 340.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 14 )
+
+[node name="content4" parent="BG/body/activeArea/contentArea/contentHolder" instance=ExtResource( 16 )]
+visible = false
+tab_name = "Settings"
+
+[node name="ColorRect" type="ColorRect" parent="BG/body/activeArea/contentArea/contentHolder/content4"]
+margin_right = 644.0
+margin_bottom = 340.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 0, 0.631373, 1 )
+
+[node name="footer" type="ColorRect" parent="BG/body/activeArea/contentArea"]
+margin_top = 500.0
+margin_right = 944.0
+margin_bottom = 520.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 0.141176, 0.145098, 0.180392, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BG/body/activeArea/contentArea/footer"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 10.0
+margin_top = -10.0
+margin_right = 944.0
+margin_bottom = 10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BG/body/activeArea/contentArea/footer/HBoxContainer"]
+margin_right = 87.0
+margin_bottom = 20.0
+alignment = 1
+
+[node name="Label" type="Label" parent="BG/body/activeArea/contentArea/footer/HBoxContainer/VBoxContainer"]
+modulate = Color( 0.321569, 0.345098, 0.415686, 1 )
+margin_top = 3.0
+margin_right = 87.0
+margin_bottom = 17.0
+text = "BY: Kcfresh53"
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="toggled" from="BG/body/topTab/tabBtn" to="." method="_on_tabBtn_toggled"]
+[connection signal="gui_input" from="BG/body/topTab/topTab/topTabControl" to="BG/body/topTab/topTab/topTabControl" method="_on_topTab_gui_input"]
+[connection signal="pressed" from="BG/body/topTab/topTab/topTabControl/controlBar/minimizeBtn" to="BG/body/topTab/topTab/topTabControl" method="_on_minimizeBtn_pressed"]
+[connection signal="pressed" from="BG/body/topTab/topTab/topTabControl/controlBar/maximizeBtn" to="BG/body/topTab/topTab/topTabControl" method="_on_maximizeBtn_pressed"]
+[connection signal="pressed" from="BG/body/topTab/topTab/topTabControl/controlBar/closeBtn" to="BG/body/topTab/topTab/topTabControl" method="_on_closeBtn_pressed"]
+[connection signal="pressed" from="BG/body/activeArea/contentArea/contentHolder/content1/inputsPanel/inputPanel/Button" to="." method="_on_Button_pressed"]

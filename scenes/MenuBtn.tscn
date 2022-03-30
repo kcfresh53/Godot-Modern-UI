@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/MenuBtn.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.137255, 0.152941, 0.180392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0352941, 0.482353, 0.921569, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.109804, 0.113725, 0.12549, 1 )
+
+[node name="MenuBtn" type="Button"]
+margin_right = 50.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+min_size_flag = Vector2( 50, 50 )
+
+[node name="Texture" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -7.5
+margin_top = -7.5
+margin_right = 7.5
+margin_bottom = 7.5
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

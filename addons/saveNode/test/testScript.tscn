@@ -1,0 +1,101 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/SaveNodeTest.gd" type="Script" id=1]
+[ext_resource path="res://addons/saveNode/scripts/saveNode.gd" type="Script" id=2]
+
+[node name="SaveNodeTest" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.870588, 0.886275, 0.901961, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.107
+margin_bottom = -0.200005
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Add" type="Button" parent="."]
+anchor_left = 0.945
+anchor_top = 0.12
+anchor_right = 0.992
+anchor_bottom = 0.2
+margin_left = 0.319946
+margin_right = 0.191956
+text = "ADD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Remove" type="Button" parent="."]
+anchor_left = 0.945
+anchor_top = 0.227
+anchor_right = 0.992
+anchor_bottom = 0.307
+margin_left = 0.319946
+margin_top = -0.200012
+margin_right = 0.191956
+margin_bottom = -0.200012
+text = "REM"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="."]
+anchor_left = 0.945
+anchor_top = 0.227
+anchor_right = 0.992
+anchor_bottom = 0.307
+margin_left = 0.319946
+margin_top = 343.8
+margin_right = 0.191956
+margin_bottom = 343.8
+text = "SAVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="."]
+anchor_left = 0.945
+anchor_top = 0.227
+anchor_right = 0.992
+anchor_bottom = 0.307
+margin_left = 0.319946
+margin_top = 407.8
+margin_right = 0.191956
+margin_bottom = 407.8
+text = "LOAD"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 72.0
+margin_right = 952.0
+margin_bottom = 592.0
+custom_colors/font_color = Color( 0.243137, 0.235294, 0.27451, 1 )
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SaveNode" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[connection signal="pressed" from="Add" to="." method="_on_Add_pressed"]
+[connection signal="pressed" from="Remove" to="." method="_on_Remove_pressed"]
+[connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_Load_pressed"]
