@@ -18,6 +18,7 @@ config/icon="res://icon.png"
 [autoload]
 
 SignalBus="*res://scripts/signalBus.gd"
+SaveSystem="*res://scripts/SaveSystem.gd"
 
 [display]
 
@@ -27,7 +28,7 @@ window/per_pixel_transparency/enabled=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/saveNode/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [physics]
 

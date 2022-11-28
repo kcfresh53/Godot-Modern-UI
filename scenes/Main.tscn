@@ -89,9 +89,6 @@ font_data = SubResource( 15 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 11 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="BG" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -143,9 +140,6 @@ margin_right = 10.0
 margin_bottom = 10.0
 texture = ExtResource( 10 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="topTab" type="VBoxContainer" parent="BG/body/topTab"]
 margin_left = 80.0
@@ -174,9 +168,6 @@ anchor_right = 0.185
 anchor_bottom = 1.0
 margin_left = 5.0
 margin_right = 0.360001
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BG/body/topTab/topTab/topTabControl/title"]
 margin_right = 20.0
@@ -208,9 +199,6 @@ margin_top = -25.0
 margin_bottom = 25.0
 size_flags_horizontal = 3
 custom_constants/separation = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="minimizeBtn" parent="BG/body/topTab/topTab/topTabControl/controlBar" instance=ExtResource( 1 )]
 Icon = ExtResource( 3 )
@@ -239,9 +227,6 @@ anchor_bottom = 1.0
 margin_left = 10.0
 margin_right = -0.208008
 rect_min_size = Vector2( 0, 20 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="appDescription" type="Label" parent="BG/body/topTab/topTab/descriptionTab/HBoxContainer"]
 modulate = Color( 0.321569, 0.345098, 0.415686, 1 )
@@ -290,9 +275,6 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/separation = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="homeTab" parent="BG/body/activeArea/leftTab/tabHolder" instance=ExtResource( 7 )]
 Icon = ExtResource( 13 )
@@ -393,7 +375,7 @@ margin_bottom = 40.0
 rect_min_size = Vector2( 80, 0 )
 custom_styles/panel = SubResource( 10 )
 
-[node name="CheckButton" type="CheckButton" parent="BG/body/activeArea/contentArea/contentHolder/content1/inputsPanel/inputPanel/checkboxHolder"]
+[node name="saveButton" type="CheckButton" parent="BG/body/activeArea/contentArea/contentHolder/content1/inputsPanel/inputPanel/checkboxHolder"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -489,9 +471,6 @@ margin_left = 10.0
 margin_top = -10.0
 margin_right = 944.0
 margin_bottom = 10.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BG/body/activeArea/contentArea/footer/HBoxContainer"]
 margin_right = 87.0

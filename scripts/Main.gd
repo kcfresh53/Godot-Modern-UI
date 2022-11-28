@@ -7,7 +7,7 @@ onready var line_edit = $BG/body/activeArea/contentArea/contentHolder/content1/i
 onready var welcome_label = $BG/body/activeArea/contentArea/contentHolder/content1/Panel/name
 
 
-var name_input = ""
+var name_input = SaveSystem.username
 
 
 

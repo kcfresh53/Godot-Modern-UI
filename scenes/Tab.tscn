@@ -13,9 +13,6 @@ custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 1 )
 custom_styles/normal = ExtResource( 1 )
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="indicator" type="ColorRect" parent="."]
 anchor_bottom = 1.0
@@ -32,9 +29,6 @@ anchor_bottom = 1.0
 margin_left = -0.240005
 rect_min_size = Vector2( 4, 0 )
 color = Color( 0.172549, 0.192157, 0.239216, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchor_left = 0.5
